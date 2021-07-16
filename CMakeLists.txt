@@ -13,4 +13,4 @@ target_include_directories(zig_seL4_wrapper
         include
 )
 
-target_link_libraries(utils sel4 sel4platsupport)
+target_link_libraries(zig_seL4_wrapper sel4 sel4platsupport)
