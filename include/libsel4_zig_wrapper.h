@@ -181,3 +181,6 @@ typedef struct zig_seL4_MessageInfo zig_seL4_MessageInfo_t;
 #if defined(CONFIG_KERNEL_MCS)
  seL4_Error zig_seL4_SchedContext_YieldTo(seL4_SchedContext _service);
 #endif
+
+ // Debug things
+ seL4_Uint32 zig_seL4_DebugCapIdentify(seL4_CPtr cap);

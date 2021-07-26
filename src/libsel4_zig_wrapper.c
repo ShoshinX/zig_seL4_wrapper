@@ -329,4 +329,6 @@
 }
 #endif
 
-
+seL4_Uint32 zig_seL4_DebugCapIdentify(seL4_CPtr cap){
+    return seL4_DebugCapIdentify(cap);
+}
