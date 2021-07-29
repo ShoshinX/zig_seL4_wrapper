@@ -184,3 +184,4 @@ typedef struct zig_seL4_MessageInfo zig_seL4_MessageInfo_t;
 
  // Debug things
  seL4_Uint32 zig_seL4_DebugCapIdentify(seL4_CPtr cap);
+ void        zig_seL4_DebugDumpScheduler();
