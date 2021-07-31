@@ -335,3 +335,25 @@ seL4_Uint32 zig_seL4_DebugCapIdentify(seL4_CPtr cap){
 void zig_seL4_DebugDumpScheduler(){
     seL4_DebugDumpScheduler();
 }
+
+void zig_seL4_Reply(zig_seL4_MessageInfo_t info){
+    seL4_Reply(info.msginfo);
+}
+
+zig_seL4_MessageInfo_t zig_seL4_Recv(seL4_CPtr w, seL4_Word *sender){
+    zig_seL4_MessageInfo_t t = {.msginfo = seL4_Recv(w, sender), .dummy = {0}};
+    return t;
+}
+
+seL4_Uint64 zig_seL4_MessageInfo_get_length(zig_seL4_MessageInfo_t arg){
+    return seL4_MessageInfo_get_length(arg.msginfo);
+}
+
+void zig_seL4_Send(seL4_CPtr slot, zig_seL4_MessageInfo_t info) {
+    seL4_Send(slot, info.msginfo);
+}
+zig_seL4_MessageInfo_t zig_seL4_ReplyRecv(seL4_CPtr dest, zig_seL4_MessageInfo_t info, seL4_Word *sender) {
+    zig_seL4_MessageInfo_t t = {.msginfo = seL4_ReplyRecv(dest, info.msginfo, sender), .dummy = {0}};
+    return t;
+
+}

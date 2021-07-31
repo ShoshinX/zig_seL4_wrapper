@@ -20,7 +20,7 @@ typedef struct zig_seL4_CapRights zig_seL4_CapRights_t;
 
 struct zig_seL4_MessageInfo {
     seL4_MessageInfo_t msginfo;
-    seL4_Uint64 words[3];
+    seL4_Uint64 dummy[3];
 };
 
 typedef struct zig_seL4_MessageInfo zig_seL4_MessageInfo_t;
@@ -185,3 +185,10 @@ typedef struct zig_seL4_MessageInfo zig_seL4_MessageInfo_t;
  // Debug things
  seL4_Uint32 zig_seL4_DebugCapIdentify(seL4_CPtr cap);
  void        zig_seL4_DebugDumpScheduler();
+
+void zig_seL4_Reply(zig_seL4_MessageInfo_t info); 
+zig_seL4_MessageInfo_t zig_seL4_Recv(seL4_CPtr w, seL4_Word *sender); 
+
+seL4_Uint64 zig_seL4_MessageInfo_get_length(zig_seL4_MessageInfo_t arg);
+void zig_seL4_Send(seL4_CPtr slot,zig_seL4_MessageInfo_t info);
+zig_seL4_MessageInfo_t zig_seL4_ReplyRecv(seL4_CPtr dest, zig_seL4_MessageInfo_t info, seL4_Word *sender);
