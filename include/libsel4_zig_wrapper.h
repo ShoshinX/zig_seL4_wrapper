@@ -192,3 +192,7 @@ zig_seL4_MessageInfo_t zig_seL4_Recv(seL4_CPtr w, seL4_Word *sender);
 seL4_Uint64 zig_seL4_MessageInfo_get_length(zig_seL4_MessageInfo_t arg);
 void zig_seL4_Send(seL4_CPtr slot,zig_seL4_MessageInfo_t info);
 zig_seL4_MessageInfo_t zig_seL4_ReplyRecv(seL4_CPtr dest, zig_seL4_MessageInfo_t info, seL4_Word *sender);
+
+
+void zig_seL4_Wait(seL4_CPtr, seL4_Word *sender);
+void zig_seL4_Signal(seL4_CPtr dest);

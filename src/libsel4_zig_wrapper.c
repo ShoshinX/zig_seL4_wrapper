@@ -357,3 +357,11 @@ zig_seL4_MessageInfo_t zig_seL4_ReplyRecv(seL4_CPtr dest, zig_seL4_MessageInfo_t
     return t;
 
 }
+
+void zig_seL4_Wait(seL4_CPtr src, seL4_Word *sender){
+    seL4_Wait(src, sender);
+}
+
+void zig_seL4_Signal(seL4_CPtr dest){
+    seL4_Signal(dest);
+}
